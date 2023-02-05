@@ -11,7 +11,6 @@
 
 from random import randint
 
-flag = True
 num = int(input("Введите количество дней: "))
 
 array = {}
