@@ -8,16 +8,11 @@
 # 2
 
 # from math import ceil
-
 # n = 700 # скорость
 # m = 750 # дистанция
-
 # time = ceil (m / n)
-
 # ost = m // n
-
 # d = int(m / n) + ost
-
 # print(time)
 
 try:
