@@ -6,7 +6,22 @@
 # [1, 5, 2, 3, 4, 1, 7, 8 , 15 , 1 ] => [1, 5]
 # [1, 5, 3, 4, 1, 7, 8 , 15 , 1 ] => [3, 5]
 
-lst = [1, 5, 3, 4, 1, 9, 8, 15, 14, 1]
+def vozrPosl (lst, lstMM, minZ, tempMIN):
+    for i in range(len(lst)):
+        if tempMIN + 1 in lst:
+            if tempMIN > minZ:
+                minZ = tempMIN + 1
+            break
+        else:
+            tempMIN += 1
+        
+    for j in range(len(lst)):
+        if tempMIN + 1 in lst:
+            tempMIN += 1
+            lstMM = [minZ, tempMIN]
+    return (lstMM, tempMIN)
+
+lst = [1, 5, 3, 4, 1, 7, 8 , 15 , 1 ]
 print(lst)
 
 minZ = tempMIN = min(lst)
@@ -14,6 +29,8 @@ maxZ = max(lst)
 
 lstMM = [minZ, maxZ]
 lstMMT = list()
+
+print(vozrPosl(lst, lstMM, minZ, tempMIN))
 
 for i in range(len(lst)):
     if tempMIN + 1 in lst:
