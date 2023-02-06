@@ -21,47 +21,26 @@ def vozrPosl (lst, lstMM, minZ, tempMIN):
             lstMM = [minZ, tempMIN]
     return (lstMM, tempMIN)
 
-lst = [1, 5, 3, 4, 1, 7, 8 , 15 , 1 ]
+lst = [1, 5, 3, 4, 1, 7, 8 , 15 , 14, 16 ]
 print(lst)
 
 minZ = tempMIN = min(lst)
 maxZ = max(lst)
 
 lstMM = [minZ, maxZ]
-lstMMT = list()
+bibl = {}
 
-print(vozrPosl(lst, lstMM, minZ, tempMIN))
+while tempMIN < maxZ:
+    D = vozrPosl(lst, lstMM, minZ, tempMIN)
+    tempMIN = D[1]
+    lstMMT = D[0]
+    if lstMMT[1] - lstMMT[0] != 0:
+        bibl[lstMMT[1] - lstMMT[0] + 1] = D[0]
+        # print(lstMMT)
 
-for i in range(len(lst)):
-    if tempMIN + 1 in lst:
-        if tempMIN > minZ:
-            minZ = tempMIN + 1
-        break
-    else:
-        tempMIN += 1
-        
-for j in range(len(lst)):
-    if tempMIN + 1 in lst:
-        tempMIN += 1
-        lstMM = [minZ, tempMIN]
+x = 0
 
-a = lstMM[1] - lstMM[0]        
-print(lstMM, a + 1)
-
-for i in range(len(lst)):
-    if tempMIN + 1 in lst:
-        if tempMIN > minZ:
-            minZ = tempMIN + 1
-        break
-    else:
-        tempMIN += 1
-        
-for j in range(len(lst)):
-    if tempMIN + 1 in lst:
-        tempMIN += 1
-        lstMMT = [minZ, tempMIN]
-
-b = lstMMT[1] - lstMMT[0]        
-print(lstMMT, b + 1)
-
-
+for k, v in bibl.items():
+    if k > x:
+        x = k
+        print(f"Наибольшая последовательность {bibl[x]}")
