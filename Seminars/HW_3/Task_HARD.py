@@ -21,7 +21,7 @@ def vozrPosl (lst, lstMM, minZ, tempMIN):
             lstMM = [minZ, tempMIN]
     return (lstMM, tempMIN)
 
-lst = [1, 5, 3, 4, 1, 7, 8 , 15 , 14, 16 ]
+lst = [1, 5, 3, 4, 1, 7, 8 , 15 , 1 ]
 print(lst)
 
 minZ = tempMIN = min(lst)
@@ -36,8 +36,7 @@ while tempMIN < maxZ:
     lstMMT = D[0]
     if lstMMT[1] - lstMMT[0] != 0:
         bibl[lstMMT[1] - lstMMT[0] + 1] = D[0]
-        # print(lstMMT)
-
+        
 x = 0
 
 for k, v in bibl.items():
