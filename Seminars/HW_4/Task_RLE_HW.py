@@ -3,17 +3,29 @@
 # например декодирование https://stepik.org/lesson/21300/step/2
 
 def coding(strNot):
-    unicSimbol = set(strNot)
+    
+    strSpis = []
+    strCount = []
+    for i in strNot:
+        strSpis.append(i)
 
-    for i in unicSimbol:
-        counter = 0
-        for j in range(len(strNot)):
-            if i == strNot[j]:
-                counter += 1
-                strNot[j] = (f"{strNot[j]}_{counter}")
-    return strNot
+    print(strSpis)
+    count = 1
+    fSimb = strSpis[0]
+    for i in range(1, len(strSpis)):
+        if fSimb == strSpis[i]:
+            count += 1
+            print(strSpis[i], count)
+        else:
+            if count > 1:
+                strCount.append(count)
+            strCount.append(fSimb)
+            fSimb = strSpis[i]
+            count = 1
+            print(strSpis[i], count)
+    return strCount
 
 str = 'aaabccccCCaB'
+print(str)
 str = coding(str)
-
 print(str)

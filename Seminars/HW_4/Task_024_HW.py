@@ -7,7 +7,7 @@
 
 from random import randint
 
-n = int(input("Введите колличество кустов: "))
+n = int(input("Введите количество кустов: "))
 countN = [randint(1, 10) for _ in range(n)]
 max = countN[0] + countN[1] + countN[2]
 sumN = 0
@@ -22,4 +22,4 @@ for i in range(1, len(countN)):
         max = sumN
 
 print(countN)
-print(max)
+print(f"Максимально за один раз можно снять {max} ягод(ы)")
