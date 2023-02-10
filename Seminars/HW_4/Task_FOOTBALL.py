@@ -20,20 +20,24 @@
 # Локомотив:2 2 0 0 6
 
 from random import randint
-commands = ['Спартак', 'Зенит', 'Локомотив']
+commands = ['Спартак', 'Зенит', 'Локомотив', 'ЦСКА', 'Динамо']
 n = int(input("Введите количество матчей: "))
 tableRez = {}
 for i in commands:
     tableRez[i] = [0, 0, 0, 0, 0]
 
 rezGNabor = []
-for i in range(n):
-    comanda1 = comanda2 = ''
-    while comanda1 == comanda2:
-        comanda1 = commands[randint(0, len(commands) - 1)]
-        comanda2 = commands[randint(0, len(commands) - 1)]
-    rezG = f"{comanda1};{str(randint(0, 5))};{comanda2};{str(randint(0, 5))}"
-    rezGNabor.append(rezG)
+
+try:
+    for i in range(n):
+        comanda1 = comanda2 = ''
+        while comanda1 == comanda2:
+            comanda1 = commands[randint(0, len(commands) - 1)]
+            comanda2 = commands[randint(0, len(commands) - 1)]
+        rezG = f"{comanda1};{str(randint(0, 5))};{comanda2};{str(randint(0, 5))}"
+        rezGNabor.append(rezG)
+except:
+    print("Вылетели за пределы памяти")
 
 tempComanda1 = []
 tempComanda2 = []
@@ -74,4 +78,4 @@ for (k, v) in tableRez.items():
     print(f"{k}: {tempStr}")
     tempStr = ''
 
-print(rezGNabor)
+# print(rezGNabor)
