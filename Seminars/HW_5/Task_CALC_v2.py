@@ -43,7 +43,7 @@ def digitSR(stroka, razdel, digR = ''):
         j += 1
     return [digR.replace('.', '', 1), j]
 
-a = " 11-9/3*7+4 " # input("Введите выражение для вычисления: ")
+a = " 1+9/3*7-4 " # input("Введите выражение для вычисления: ")
 
 print(a)
 

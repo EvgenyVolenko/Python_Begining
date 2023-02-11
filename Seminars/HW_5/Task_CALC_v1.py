@@ -42,7 +42,7 @@ def digitSLR(stroka, razdel):
     return [digL, i, digR, j]
 
 
-a = " 11-9/3*7+4 " # input("Введите выражение для вычисления: ")
+a = " 1+9/3*7-4 " # input("Введите выражение для вычисления: ")
 
 print(a)
 

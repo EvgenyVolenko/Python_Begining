@@ -43,7 +43,7 @@ def ret(s):
         elif operator == '-':
             return subtraction(ret(left), ret(right))
 
-a = "11-9/3*7+4" # input("Введите выражение для вычисления: ")
+a = "1+9/3*7-4" # input("Введите выражение для вычисления: ")
 
 print(ret(a))
    
