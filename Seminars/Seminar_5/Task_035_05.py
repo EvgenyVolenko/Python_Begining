@@ -17,6 +17,15 @@ def simple(digit):
         anser = False
     return anser
 
+def simple2(n, m):
+    if m == 1:
+        return True
+    elif n % m == 0:
+        return False
+    else:
+        return True and simple2(n, m - 1)
+
 n = int(input("Введите число для проверки: "))
 
 print(simple(n))
+print(simple2(n, n - 1))

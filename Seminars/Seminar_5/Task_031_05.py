@@ -6,15 +6,10 @@
 # Задание необходимо решать через рекурсию
 
 def fib(k):
-    if k == 0:
-        return 0
-    elif k == 1:
-        return 1
-    else:
-        fibK = fib(k - 1) + fib(k - 2)
-    return fibK 
+    if k in [0, 1]:
+        return k
+    return fib(k - 1) + fib(k - 2)
     
-
 n = int(input("Введите номер числа Фибоначчи: "))
 
 print(fib(n))
