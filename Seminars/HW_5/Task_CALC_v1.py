@@ -1,5 +1,6 @@
 # задача калькулятор необязательная.
-# Решать только через рекурсию!. Пользоваться встроенными функциями вычисления таких выражений нельзя, если только для проверки вашего алгоритма.
+# Решать только через рекурсию!. Пользоваться встроенными функциями вычисления таких выражений нельзя, 
+# если только для проверки вашего алгоритма.
 # на вход подается строка из операторов / * + - и целых чисел. Надо посчитать результат введенного выражения.
 # Например,
 # на входе
@@ -41,11 +42,8 @@ def digitSLR(stroka, razdel):
         j += 1
     return [digL, i, digR, j]
 
-
 a = " 1+9/3*7-4 " # input("Введите выражение для вычисления: ")
-
 print(a)
-
 while "/" in a:
     numD = a.find("/")
     nabor = digitSLR(a, numD)
@@ -55,9 +53,7 @@ while "/" in a:
     j = nabor[3]
     rezd = division(int(digitL[::-1]), int(digitR))
     a = a.replace(a[numD - i + 1: numD + j], str(rezd), 1)
-    
 print(a)
-
 while "*" in a:
     numD = a.find("*")
     nabor = digitSLR(a, numD)
@@ -67,9 +63,7 @@ while "*" in a:
     j = nabor[3]
     rezd = multiplication(int(digitL[::-1]), int(digitR))
     a = a.replace(a[numD - i + 1: numD + j], str(rezd), 1)
-
 print(a)
-
 while "-" in a:
     numD = a.find("-")
     nabor = digitSLR(a, numD)
@@ -79,9 +73,7 @@ while "-" in a:
     j = nabor[3]
     rezd = subtraction(int(digitL[::-1]), int(digitR))
     a = a.replace(a[numD - i + 1: numD + j], str(rezd), 1)
-
 print(a)
-
 while "+" in a:
     numD = a.find("+")
     nabor = digitSLR(a, numD)
@@ -91,8 +83,5 @@ while "+" in a:
     j = nabor[3]
     rezd = addition(int(digitL[::-1]), int(digitR))
     a = a.replace(a[numD - i + 1: numD + j], str(rezd), 1)
-
 print(a)
-
-
     
