@@ -13,6 +13,25 @@ def printMatrix(matrix):
           print ( "{:4d}".format(x), end = "|" ) 
       print ()
 
+def matrixToArray(matrix):
+    array = []
+    arrayN = []
+    i = 0
+    for row in matrix: 
+      for x in row: 
+        array.append(x)
+        arrayN.append(i)
+        i += 1
+    return array, arrayN
+
+def arrayToMatrix(arr):
+    i = 0
+    for j in range ( len(massiv) ): 
+        for k in range ( len(massiv[j]) ): 
+            massiv[j][k] = arr[i]
+            i += 1
+    return massiv
+
 while True:
     n = int(input("Введите число строк: "))
     m = int(input("Введите число столбцов: "))
@@ -20,6 +39,27 @@ while True:
         break
     print(f"Количество элементов массива {m} * {n} НЕЧЕТНОЕ. А нужно четное!")
 
-massiv = [[randint(0, 10) for _ in range(m)] for _ in range(n)]
+massiv = [[0,1,2,3],[4,5,6,7]]#[[randint(0, 10) for _ in range(m)] for _ in range(n)]
 
 printMatrix(massiv)
+print()
+arr = matrixToArray(massiv)[0]
+arrN = matrixToArray(massiv)[1]
+
+for i in range(len(arr) // 2):
+    j = randint(0, len(arrN) - 1)
+    tempJ = arr[arrN[j]]
+    print(f"J {arrN[j]} {tempJ}")
+    arrN.pop(j)
+    k = randint(0, len(arrN) - 1)
+    if k == j:
+        k = randint(0, len(arrN) - 1)
+    tempK = arr[arrN[k]]
+    print(f"K {arrN[k]} {tempK}")
+    arrN.pop(k)
+    tempArr = arr[tempJ]
+    arr[tempJ] = arr[tempK]
+    arr[tempK] = tempArr
+    print(arr)
+    
+printMatrix(arrayToMatrix(arr))
