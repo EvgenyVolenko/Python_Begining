@@ -39,23 +39,25 @@ while True:
         break
     print(f"Количество элементов массива {m} * {n} НЕЧЕТНОЕ. А нужно четное!")
 
-massiv = [[0,1,2,3],[4,5,6,7]]#[[randint(0, 10) for _ in range(m)] for _ in range(n)]
+massiv = [[randint(0, 10) for _ in range(m)] for _ in range(n)]
 
 printMatrix(massiv)
 print()
 arr = matrixToArray(massiv)[0]
 arrN = matrixToArray(massiv)[1]
 
+print(arr)
+
 for i in range(len(arr) // 2):
     j = randint(0, len(arrN) - 1)
     tempJ = arr[arrN[j]]
-    print(f"J {arrN[j]} {tempJ}")
+    print(f"J {tempJ}")
     arrN.pop(j)
     k = randint(0, len(arrN) - 1)
     if k == j:
         k = randint(0, len(arrN) - 1)
     tempK = arr[arrN[k]]
-    print(f"K {arrN[k]} {tempK}")
+    print(f"K {tempK}")
     arrN.pop(k)
     tempArr = arr[tempJ]
     arr[tempJ] = arr[tempK]
