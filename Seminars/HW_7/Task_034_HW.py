@@ -8,3 +8,20 @@
 # в порядке
 # Ввод:                                       Вывод:
 # пара-ра-рам рам-пам-папам па-ра-па-дам      Парам пам-пам
+
+def sum(slovo):
+    slov = 'АЕЁИОУЭЮЯ'
+    slovo = list(slovo.upper())
+    sum = 0
+    for simbol in slovo:
+        if simbol in slov:
+            sum += 1
+    return sum
+
+frazaList = input('Введите поток сознания Винни-Пуха: ')
+
+rez = set(sum(gl) for gl in frazaList.split())
+if len(rez) == 1:
+    print("Парам пам-пам")
+else:
+    print("Пам парам")
